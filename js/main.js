@@ -52,13 +52,13 @@ function checkLeapYear(){
 var getRandomNumber = document.getElementById('your-number-2');
 function randomNumber(){
     amountNumber = document.getElementById('how-many-number').value;
-    firstNumber = document.getElementById('first-number').value;
-    lastNumber = document.getElementById('last-number').value;
-    console.log(amountNumber, firstNumber, lastNumber);
+    minNumber = document.getElementById('min-number').value;
+    maxNumber = document.getElementById('max-number').value;
+    console.log(amountNumber, minNumber, maxNumber);
     // for (let index = 1; index <= amountNumber; index++) {
     //     console.log("so = ", index);
     // }
-    var num = Math.random() * (lastNumber - firstNumber) + firstNumber; 
+    var num = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber); 
     console.log('random',num);
 }
 
