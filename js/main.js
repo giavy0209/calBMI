@@ -47,3 +47,18 @@ function checkLeapYear(){
         checkYear.innerHTML = "năm " + userYear + " không phải là năm nhuận"; 
     }
 }
+
+
+var getRandomNumber = document.getElementById('your-number-2');
+function randomNumber(){
+    amountNumber = document.getElementById('how-many-number').value;
+    firstNumber = document.getElementById('first-number').value;
+    lastNumber = document.getElementById('last-number').value;
+    console.log(amountNumber, firstNumber, lastNumber);
+    // for (let index = 1; index <= amountNumber; index++) {
+    //     console.log("so = ", index);
+    // }
+    var num = Math.random() * (lastNumber - firstNumber) + firstNumber; 
+    console.log('random',num);
+}
+

@@ -40,11 +40,25 @@
         </h1>
         <div class="input-group">
             <form action="">
-                <input id="check-leap-year" type="number" placeholder="Nhập số cần kiểm tra">
+                <input id="check-leap-year" type="number" placeholder="Nhập năm cần kiểm tra">
                 <input type="button" value="Kiểm tra" onclick="checkLeapYear()">
             </form>
         </div>
         <h1 id="leap-year"></h1>
+
+
+        <h1 class="title">
+            nhận số random
+        </h1>
+        <div class="input-group">
+            <form action="">
+                <input id="how-many-number" type="number" placeholder="Bạn cần quay bao nhiêu số?">
+                <input id="first-number" type="number" placeholder="Nhập số nhỏ nhất">
+                <input id="last-number" type="number" placeholder="Nhập số lớn nhất">
+                <input type="button" value="Quay số" onclick="randomNumber()">
+            </form>
+        </div>
+        <h1 id="your-number-2"></h1>
     </div>
 </body>
 <script src="js/main.js"></script>
