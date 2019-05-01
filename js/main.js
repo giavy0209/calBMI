@@ -49,16 +49,45 @@ function checkLeapYear(){
 }
 
 
+
+
+
 var getRandomNumber = document.getElementById('your-number-2');
 function randomNumber(){
     amountNumber = Number(document.getElementById('amount-number').value);
     minNumber = Number(document.getElementById('min-number').value);
     maxNumber = Number(document.getElementById('max-number').value);
     console.log(amountNumber, minNumber, maxNumber);
-    for (let index = 1; index <= amountNumber; index++) {
-        var num = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber); 
-        console.log('random', index ,num);
-        getRandomNumber.innerHTML = "số của bạn là " + num;
-    }  
-}
+    text = "số của bạn là ";
+    if ( (maxNumber - minNumber) <= amountNumber){
+        getRandomNumber.innerHTML = "bạn quay số làm gì vậy?"
+    }else{
+        var arr = [];
+        for (let index = 1; index <= amountNumber; index++) {
+            var num = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+            console.log('random', index ,num);
+            arr.push(num);
+        }  
+        // debugger;
+        for (let index1 = 0; index1 <= arr.length - 1; index1++){
+            for(let index2 = 1; index2 <= arr.length - 1; index2++){
+                if(index1 == index2){
 
+                }
+                else if(arr[index1] == arr[index2]){
+                    console.log("có số lặp lại", arr[index1],arr[index2]);
+                        arr.splice(index2, 1);
+                        arr.push(Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber));
+                        index1 = 0;
+                        index2 = 1;
+                }
+                else{
+                    console.log("không có số lặp lại");
+                }
+            }
+            console.log("arr= ",arr);
+            getRandomNumber.innerHTML = "số của bạn là" + arr;
+        }
+    }
+
+}
